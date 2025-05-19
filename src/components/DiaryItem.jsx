@@ -27,7 +27,7 @@ export default function DiaryItem({ diary, onEdit, emotionImages }) {
           className="emotion-img clickable"
         />
       </div>
-      <div className="diary-info">
+      <div className="diary-info" onClick={handleItemClick}>
         <span className="diary-date">{formatDate(diary.date)}</span>
         <p className="diary-content">{diary.content}</p>
       </div>
