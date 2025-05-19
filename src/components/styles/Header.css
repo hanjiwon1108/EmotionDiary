@@ -1,0 +1,46 @@
+.home-header {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.home-header h2 {
+  color: var(--color-text);
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.date-navigator {
+  width: 100%;
+  display: flex;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.date-navigator button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.date-navigator button:hover {
+  background-color: var(--color-primary-light);
+}
+
+.date-display {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--color-text);
+}

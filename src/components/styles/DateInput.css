@@ -1,0 +1,27 @@
+.input-section {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.input-section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: var(--color-text);
+}
+
+.date-input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--color-white);
+  transition: all 0.2s ease;
+}
+
+.date-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(66, 99, 235, 0.15);
+  outline: none;
+}

@@ -1,0 +1,28 @@
+.button-group {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.cancel-btn {
+  background-color: var(--color-secondary);
+}
+
+.cancel-btn:hover {
+  background-color: var(--color-secondary-dark);
+}
+
+.submit-btn {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-primary-dark)
+  );
+  box-shadow: 0 4px 10px rgba(66, 99, 235, 0.2);
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(66, 99, 235, 0.3);
+}

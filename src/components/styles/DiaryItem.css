@@ -1,0 +1,198 @@
+.diary-item {
+  display: flex;
+  border-radius: 16px;
+  padding: 20px 24px; /* 여백 증가 */
+  margin-bottom: 16px; /* 여백 증가 */
+  background-color: #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fade-in 0.5s ease forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 각 아이템마다 다른 테두리 색상 표시 */
+.diary-item:nth-child(5n + 1) {
+  border-left: 6px solid #4dabf7; /* 파란색 */
+}
+
+.diary-item:nth-child(5n + 2) {
+  border-left: 6px solid #f783ac; /* 분홍색 */
+}
+
+.diary-item:nth-child(5n + 3) {
+  border-left: 6px solid #82c91e; /* 초록색 */
+}
+
+.diary-item:nth-child(5n + 4) {
+  border-left: 6px solid #f76707; /* 주황색 */
+}
+
+.diary-item:nth-child(5n + 5) {
+  border-left: 6px solid #7950f2; /* 보라색 */
+}
+
+.diary-item::before {
+  display: none;
+}
+
+.diary-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(66, 99, 235, 0.15);
+}
+
+.emotion-img-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 24px; /* 여백 증가 */
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  background: linear-gradient(
+    135deg,
+    #e7f5ff,
+    #e3f2fd
+  ); /* 그라데이션 배경 추가 */
+  padding: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.emotion-img-wrapper::after {
+  content: "일기 상세보기";
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  right: 0;
+  background-color: rgba(121, 80, 242, 0.9); /* 보라색 배경 */
+  color: white;
+  font-size: 12px; /* 폰트 크기 증가 */
+  font-weight: 600; /* 더 굵게 */
+  padding: 6px 0; /* 패딩 증가 */
+  text-align: center;
+  transition: bottom 0.3s ease;
+  border-radius: 0 0 50% 50%; /* 둥근 모서리 */
+}
+
+.emotion-img-wrapper:hover::after {
+  bottom: 0;
+}
+
+.emotion-img-wrapper:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(66, 99, 235, 0.2);
+}
+
+.emotion-img {
+  width: 90px; /* 크기 증가 */
+  height: 90px; /* 크기 증가 */
+  border-radius: 50%;
+  padding: 0.3rem;
+  transition: transform 0.3s ease;
+  background: white;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.emotion-img.clickable {
+  cursor: pointer;
+}
+
+.emotion-img.clickable:active {
+  transform: scale(0.95);
+}
+
+.emotion-img:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.diary-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  text-align: left;
+  padding: 8px 0; /* 여백 추가 */
+}
+
+/* 감정별로 날짜 색상을 다르게 표시 - 예시 */
+.diary-date {
+  font-size: 1rem; /* 크기 증가 */
+  margin-bottom: 10px; /* 여백 증가 */
+  display: block;
+  font-weight: 600; /* 더 굵게 */
+  letter-spacing: 0.5px;
+  background: linear-gradient(45deg, #748ffc, #91a7ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.diary-content {
+  color: #495057; /* 더 진한 텍스트 색상 */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.6; /* 줄 간격 증가 */
+  font-size: 1.05rem; /* 폰트 크기 증가 */
+  margin-bottom: 12px; /* 여백 추가 */
+}
+
+.diary-button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-left: 16px; /* 왼쪽 여백 추가 */
+  align-self: center; /* 중앙 정렬 */
+}
+
+.edit-btn {
+  padding: 0.6em 1.2em; /* 패딩 증가 */
+  font-size: 0.9em;
+  font-weight: 600; /* 더 굵게 */
+  background: linear-gradient(135deg, #ff8787, #fa5252); /* 빨간 그라데이션 */
+  color: white;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(250, 82, 82, 0.3);
+  transition: all 0.2s ease;
+}
+
+.edit-btn:hover {
+  background: linear-gradient(135deg, #fa5252, #e03131);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(250, 82, 82, 0.4);
+}
+
+/* 반응형 디자인 추가 */
+@media (max-width: 600px) {
+  .diary-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 16px;
+  }
+
+  .emotion-img-wrapper {
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+
+  .diary-info {
+    text-align: center;
+    width: 100%;
+  }
+
+  .diary-button-group {
+    margin-left: 0;
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .edit-btn {
+    width: 100%;
+  }
+}

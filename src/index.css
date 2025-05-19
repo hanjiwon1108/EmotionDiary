@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap");
+
+:root {
+  /* 색상 변수 정의 */
+  --color-primary: #4263eb;
+  --color-primary-dark: #364fc7;
+  --color-primary-light: #e7f5ff;
+  --color-secondary: #868e96;
+  --color-secondary-dark: #495057;
+
+  --color-text: #343a40;
+  --color-text-light: #868e96;
+  --color-background: #f8f9fa;
+  --color-white: #ffffff;
+
+  --color-danger: #fa5252;
+  --color-danger-dark: #e03131;
+
+  --color-border: #dee2e6;
+  --color-border-dark: #adb5bd;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+  font-family: "Noto Sans KR", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--color-text);
+  background-color: var(--color-background);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e3f2fd 0%, #fff 50%, #e8eaf6 100%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+a {
+  font-weight: 500;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 3px solid rgba(66, 99, 235, 0.3);
+}
+
+select {
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-white);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(66, 99, 235, 0.2);
+}
+
+input[type="radio"] {
+  accent-color: var(--color-primary);
+  margin-right: 0.5em;
+}
+
+label {
+  margin-right: 1em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+}
+
+.container {
+  max-width: 768px;
+  width: 100%;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #5c7cfa;
+    --color-primary-dark: #4263eb;
+    --color-primary-light: #3b5bdb;
+
+    --color-text: #f1f3f5;
+    --color-text-light: #adb5bd;
+    --color-background: #343a40;
+    --color-white: #212529;
+
+    --color-border: #495057;
+    --color-border-dark: #868e96;
+  }
+
+  body {
+    background: linear-gradient(135deg, #212529 0%, #343a40 50%, #1a1a1a 100%);
+  }
+
+  .diary-item {
+    background-color: #2b2b2b;
+  }
+
+  button {
+    background-color: var(--color-primary);
+  }
+
+  select,
+  textarea,
+  input[type="date"] {
+    background-color: #2b2b2b;
+    color: var(--color-text);
+    border-color: var(--color-border);
+  }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+
+  .emotions-container {
+    flex-wrap: wrap;
+  }
+
+  .emotion-item {
+    flex: 1 0 30%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    font-size: 12px;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  .diary-item {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@font-face {
+  font-family: "Nanum";
+  src: url("/NanumPenScript-Regular.ttf");
+}
+
+body * {
+  font-family: "Nanum";
+}
